@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Sport Shoes"
+    },
+    {
+      "id": 2,
+      "name": "Social Shoes"
+    }
+  ]
+}
