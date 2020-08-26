@@ -1,18 +1,18 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Showroom from "./pages/Showroom";
 import Order from "./pages/Order";
+import Orders from "./pages/Orders";
 
 function Router() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/order" exact>
-          <Order />
+        <Route path="/orders" exact>
+          <Orders />
         </Route>
         <Route path="/" exact>
-          <Showroom />
+          <Order />
         </Route>
       </Switch>
     </BrowserRouter>

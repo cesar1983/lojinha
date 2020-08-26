@@ -4,8 +4,10 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
     :root {
         font-size: 60%;
-        --color-background: #f0f0f7;
+        --color-background: #fff;
         --color-text: #444444;
+        --color-header-background: #20313b;
+        --color-button-border: #e22865;
     }
     
     * {
@@ -30,23 +32,6 @@ const GlobalStyle = createGlobalStyle`
     textarea {
         font: 500 1.6rem Karla;
         color: var(--color-text-base);
-    }
-
-    #root {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-        width: 90vw;
-        max-width: 700px;
-    }
-
-    @media (min-width: 700px) {
-        :root {
-            font-size: 62.5%;
-        }
     }
 
 `;
