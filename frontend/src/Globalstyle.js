@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
         --color-text: #444444;
         --color-header-background: #20313b;
         --color-button-border: #e22865;
+        --color-button-text: #fff;
+        --color-slim-button-text: #20313b;
     }
     
     * {

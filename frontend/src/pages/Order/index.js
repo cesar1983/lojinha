@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from "react";
-import Layout from "../../components/Layout";
+import React, { useEffect, useState, useMemo } from "react";
+import Layout from "../../components/UI/Layout";
+import Cart from "../../components/Order/Cart";
+import ProductList from "../../components/Order/ProductList";
+
 import * as S from "./styles.js";
-import Cart from "../../components/Cart";
 
 const Order = () => {
   const [products, setProducts] = useState([]);
@@ -63,69 +65,9 @@ const Order = () => {
     <Layout>
       <S.GridWrapper>
         <S.GridColumn>
-          <h1>Show Room</h1>
-          <S.Products>
-            <S.Product>
-              <S.ProductImage>
-                <img src="https://i.pinimg.com/736x/9a/46/da/9a46daf36e591a890b8883b4a111122a.jpg" />
-              </S.ProductImage>
-              <S.ProductInfo>
-                <h5>Winter Jacket</h5>
-                <h6>$99.99</h6>
-              </S.ProductInfo>
-            </S.Product>
-
-            <S.Product>
-              <S.ProductImage>
-                <img src="https://i.pinimg.com/736x/9a/46/da/9a46daf36e591a890b8883b4a111122a.jpg" />
-              </S.ProductImage>
-              <S.ProductInfo>
-                <h5>Winter Jacket</h5>
-                <h6>$99.99</h6>
-              </S.ProductInfo>
-            </S.Product>
-
-            <S.Product>
-              <S.ProductImage>
-                <img src="https://i.pinimg.com/736x/9a/46/da/9a46daf36e591a890b8883b4a111122a.jpg" />
-              </S.ProductImage>
-              <S.ProductInfo>
-                <h5>Winter Jacket</h5>
-                <h6>$99.99</h6>
-              </S.ProductInfo>
-            </S.Product>
-
-            <S.Product>
-              <S.ProductImage>
-                <img src="https://i.pinimg.com/736x/9a/46/da/9a46daf36e591a890b8883b4a111122a.jpg" />
-              </S.ProductImage>
-              <S.ProductInfo>
-                <h5>Winter Jacket</h5>
-                <h6>$99.99</h6>
-              </S.ProductInfo>
-            </S.Product>
-
-            <S.Product>
-              <S.ProductImage>
-                <img src="https://i.pinimg.com/736x/9a/46/da/9a46daf36e591a890b8883b4a111122a.jpg" />
-              </S.ProductImage>
-              <S.ProductInfo>
-                <h5>Winter Jacket</h5>
-                <h6>$99.99</h6>
-              </S.ProductInfo>
-            </S.Product>
-
-            <S.Product>
-              <S.ProductImage>
-                <img src="https://i.pinimg.com/736x/9a/46/da/9a46daf36e591a890b8883b4a111122a.jpg" />
-              </S.ProductImage>
-              <S.ProductInfo>
-                <h5>Winter Jacket</h5>
-                <h6>$99.99</h6>
-              </S.ProductInfo>
-            </S.Product>
-          </S.Products>
+          <ProductList />
         </S.GridColumn>
+
         <S.GridColumn>
           <h1>Carrinho</h1>
           <Cart />

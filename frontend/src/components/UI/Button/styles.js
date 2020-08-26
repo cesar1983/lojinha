@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   font-size: 2rem;
-  color: #fff;
+  color: var(--color-button-text);
   padding: 1rem 3rem;
   cursor: pointer;
   border: 0px;

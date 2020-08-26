@@ -7,11 +7,11 @@ const Nav = () => {
   return (
     <S.Nav>
       <Link to="/">
-        <Button name="showroom" label="Show Room" />
+        <Button name="showroom" label="Novo Pedido" />
       </Link>
 
       <Link to="/orders">
-        <Button name="order" label="Pedido" />
+        <Button name="order" label="Pedidos" />
       </Link>
     </S.Nav>
   );
