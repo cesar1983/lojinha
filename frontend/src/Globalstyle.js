@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
         background-color: var(--color-background);
-        font-family: "Karla", sans-serif;
+        font-family: "Poppins", sans-serif;
         color: var(--color-text);
     }
 
@@ -37,26 +37,29 @@ const GlobalStyle = createGlobalStyle`
     input,
     button,
     textarea {
-        font: 500 1.6rem Karla;
+        font: 500 1.6rem Poppins;
         color: var(--color-text-base);
     }
 
     table {
         width: 100%;
-        border: 1px solid #CCC;
+        border: 0;
         border-collapse: collapse;
-        th,
+        th {
+            border: 0;
+            border-collapse: collapse;
+            text-align:center;
+            color:#aaa;
+            font-weight: 300;
+        }
         td {
-            border: 1px solid #CCC;
+            border-bottom: 1px solid #eee;
             border-collapse: collapse;
         }
         th,
         td,
         tr {
-            padding: 5px;
-        }
-        th {
-            text-align: left;
+            padding: 8px;
         }
     }
 
