@@ -4,7 +4,51 @@ import * as S from "./styles.js";
 import Cart from "../../components/Cart";
 
 const Order = () => {
+  const [products, setProducts] = useState([]);
   const [orderItems, setOrderItems] = useState([]);
+
+  useEffect(() => {
+    setProducts(JSON.stringify("[{},{}]"));
+  }, []);
+
+  const handleProductClick = (productId) => {
+    let changedOrderItems = [...orderItems];
+
+    let newPrice = 0.0;
+    const prodOrderIndex = orderItems.findIndex(
+      (item) => item.id === productId
+    );
+    if (prodOrderIndex >= 0) {
+      changedOrderItems[prodOrderIndex].orderQuantity++;
+      newPrice = changedOrderItems[prodOrderIndex].price;
+    } else {
+      const prodIndex = products.findIndex((item) => item.id === productId);
+      if (prodIndex > -1) {
+        const prodInfo = { ...products[prodIndex] };
+        prodInfo.orderQuantity = 1;
+        changedOrderItems.push(prodInfo);
+        newPrice = prodInfo.price;
+      }
+    }
+    setOrderItems(changedOrderItems);
+  };
+
+  const handleProductRemoveClick = (productId) => {
+    let changedOrderItems = [...orderItems];
+    const prodOrderIndex = orderItems.findIndex(
+      (item) => item.id === productId
+    );
+    if (prodOrderIndex >= 0) {
+      changedOrderItems[prodOrderIndex].orderQuantity--;
+      setTotal(total - changedOrderItems[prodOrderIndex].price);
+    }
+    if (changedOrderItems[prodOrderIndex].orderQuantity === 0) {
+      changedOrderItems.splice(prodOrderIndex, 1);
+    }
+    setOrderItems(changedOrderItems);
+  };
+
+  const emptyCart = () => {};
 
   const memoizedTotal = useMemo(
     () =>
@@ -14,10 +58,6 @@ const Order = () => {
       ),
     [orderItems]
   );
-
-  const handleProductAddClick = (productId) => {};
-  const handleProductRemoveClick = (productId) => {};
-  const emptyCart = () => {};
 
   return (
     <Layout>

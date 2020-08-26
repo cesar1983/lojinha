@@ -8,7 +8,9 @@ const Layout = ({ children }) => {
       <S.Header>
         <Nav />
       </S.Header>
-      <S.Main>{children}</S.Main>
+      <S.Main>
+        {children}
+      </S.Main>
     </S.Container>
   );
 };
