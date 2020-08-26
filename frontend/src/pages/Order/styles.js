@@ -11,7 +11,7 @@ export const GridWrapper = styled.div`
 
 export const GridColumn = styled.div`
   text-align: center;
-  height: 80vh;
+  height: 85vh;
   overflow-y: auto;
 
   ::-webkit-scrollbar-track {

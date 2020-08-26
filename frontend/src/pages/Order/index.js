@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Layout from "../../components/Layout";
 import * as S from "./styles.js";
+import Cart from "../../components/Cart";
 
 const Order = () => {
+  const [orderItems, setOrderItems] = useState([]);
+
+  const memoizedTotal = useMemo(
+    () =>
+      orderItems.reduce(
+        (subtotal, item) => subtotal + item.orderQuantity * item.price,
+        0
+      ),
+    [orderItems]
+  );
+
+  const handleProductAddClick = (productId) => {};
+  const handleProductRemoveClick = (productId) => {};
+  const emptyCart = () => {};
+
   return (
     <Layout>
       <S.GridWrapper>
@@ -72,6 +88,7 @@ const Order = () => {
         </S.GridColumn>
         <S.GridColumn>
           <h1>Carrinho</h1>
+          <Cart />
         </S.GridColumn>
       </S.GridWrapper>
     </Layout>

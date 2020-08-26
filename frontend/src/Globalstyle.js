@@ -14,16 +14,21 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        color: var(--color-text);
     }
     body {
         background-color: var(--color-background);
         font-family: "Karla", sans-serif;
+        color: var(--color-text);
     }
+
     html,
     body,
     #root {
         height: 100vh;
+    }
+
+    a {
+        text-decoration:none;
     }
 
     body,
@@ -32,6 +37,25 @@ const GlobalStyle = createGlobalStyle`
     textarea {
         font: 500 1.6rem Karla;
         color: var(--color-text-base);
+    }
+
+    table {
+        width: 100%;
+        border: 1px solid #CCC;
+        border-collapse: collapse;
+        th,
+        td {
+            border: 1px solid #CCC;
+            border-collapse: collapse;
+        }
+        th,
+        td,
+        tr {
+            padding: 5px;
+        }
+        th {
+            text-align: left;
+        }
     }
 
 `;
