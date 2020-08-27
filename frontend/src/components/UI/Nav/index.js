@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as S from "./styles.js";
-import Button from "../Button";
+import HeaderButton from "../HeaderButton";
 
 const Nav = () => {
   return (
     <S.Nav>
       <Link to="/">
-        <Button name="showroom" label="Novo Pedido" />
+        <HeaderButton name="showroom" label="Novo Pedido" />
       </Link>
 
       <Link to="/orders">
-        <Button name="order" label="Pedidos" />
+        <HeaderButton name="order" label="Pedidos" />
       </Link>
     </S.Nav>
   );

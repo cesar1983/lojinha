@@ -5,6 +5,7 @@ import TextInput from "../../UI/TextInput/index.js";
 
 import * as S from "./styles.js";
 import useForm from "../../../hooks/useForm.js";
+import CheckoutButton from "../../UI/CheckoutButton";
 
 const Checkout = (props) => {
   const { orderItems } = useContext(CartContext);
@@ -67,6 +68,7 @@ const Checkout = (props) => {
     return (
       <TextInput
         key={element.id}
+        id={element.id}
         type={element.config.type}
         label={element.config.label}
         elementConfig={element.config.elementConfig}
@@ -80,8 +82,9 @@ const Checkout = (props) => {
     );
   });
 
-  const registerHandler = (event) => {
+  const processHandler = (event) => {
     event.preventDefault();
+    alert("processHandler");
 
     const formData = { orderItems: orderItems };
     for (let formElementIdenfitifer in formControls) {
@@ -96,22 +99,24 @@ const Checkout = (props) => {
     <S.CheckoutWrapper>
       <h2>Checkout</h2>
 
-      <form className="form" autoComplete="on" onSubmit={registerHandler}>
+      <S.Form className="form" autoComplete="on" onSubmit={processHandler}>
         {formElements}
-      </form>
 
-      <div>
-        <button type="reset" className="btn btn-light" onClick={resetForm}>
-          Cancelar
-        </button>
-        <button
+        <CheckoutButton
+          label="Processar"
+          name="process"
           type="submit"
-          className="btn btn-primary ml-2"
           disabled={!isValid}
-        >
-          Processar
-        </button>
-      </div>
+        />
+
+        <CheckoutButton
+          reset={true}
+          label="Cancelar"
+          name="reset"
+          type="reset"
+          onClick={resetForm}
+        />
+      </S.Form>
     </S.CheckoutWrapper>
   );
 };

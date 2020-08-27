@@ -8,8 +8,11 @@ const GlobalStyle = createGlobalStyle`
         --color-text: #444444;
         --color-header-background: #20313b;
         --color-button-border: #e22865;
-        --color-button-text: #fff;
+        --color-button-header-text: #fff;
+        --color-button-checkout-text: #20313b;
         --color-slim-button-text: #20313b;
+        --color-input-text: #282828;
+        --color-error: #ec392f;
     }
     
     * {

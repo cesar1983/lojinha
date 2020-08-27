@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import * as S from "./styles.js";
 
 const TextInput = (props) => {
@@ -11,8 +12,8 @@ const TextInput = (props) => {
 
   return (
     <S.InputBlock>
-      <S.InputLabel>{props.label}</S.InputLabel>
       <S.Input
+        id={props.id}
         type={props.type}
         value={props.value}
         onChange={props.changed}
@@ -21,6 +22,17 @@ const TextInput = (props) => {
       {errorTag}
     </S.InputBlock>
   );
+};
+
+TextInput.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  changed: PropTypes.func,
+  shouldBeValidated: PropTypes.object,
+  invalid: PropTypes.bool,
+  touched: PropTypes.bool,
+  elementConfig: PropTypes.object,
 };
 
 export default TextInput;

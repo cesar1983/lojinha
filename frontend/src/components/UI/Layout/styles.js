@@ -11,7 +11,6 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.div`
-  padding: 1rem 0;
   max-width: 120rem;
   margin: 0 auto;
 `;
