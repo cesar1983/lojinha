@@ -10,7 +10,7 @@ export const Product = styled.div`
   padding: 2rem 0;
 `;
 
-export const ProductImage = styled.div`
+export const ProductImageContainer = styled.div`
   max-width: 100%;
 
   img {

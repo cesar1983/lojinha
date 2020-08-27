@@ -1,34 +1,56 @@
+import { updatedObject } from "./utils";
+
+const addOrderItem = (state, payload) => {
+  let changedOrderItems = [...state.orderItems];
+  const prodOrderIndex = changedOrderItems.findIndex(
+    (item) => item.id === payload.id
+  );
+  if (prodOrderIndex >= 0) {
+    changedOrderItems[prodOrderIndex].orderQuantity++;
+  } else {
+    const prodInfo = { ...payload };
+    prodInfo.orderQuantity = 1;
+    changedOrderItems.push(prodInfo);
+  }
+  return updatedObject(state, {
+    orderItems: changedOrderItems,
+  });
+};
+
+const removeOrderItem = (state, payload) => {
+  let changedOrderItems = [...state.orderItems];
+  const prodOrderIndex = state.orderItems.findIndex(
+    (item) => item.id === payload.id
+  );
+  if (prodOrderIndex >= 0) {
+    changedOrderItems[prodOrderIndex].orderQuantity--;
+  }
+  if (changedOrderItems[prodOrderIndex].orderQuantity === 0) {
+    changedOrderItems.splice(prodOrderIndex, 1);
+  }
+
+  return updatedObject(state, {
+    orderItems: changedOrderItems,
+  });
+};
+
+const clearCart = (state) => {
+  return updatedObject(state, {
+    orderItems: [],
+  });
+};
+
 export const CartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
-      if (!state.cartItems.find((item) => item.id === action.payload.id)) {
-        state.cartItems.push({
-          ...action.payload,
-          quantity: 1,
-        });
-      }
+      return addOrderItem(state, action.payload);
 
-      return {
-        ...state,
-        ...sumItems(state.cartItems),
-        cartItems: [...state.cartItems],
-      };
     case "REMOVE_ITEM":
-      return {
-        ...state,
-        ...sumItems(
-          state.cartItems.filter((item) => item.id !== action.payload.id)
-        ),
-        cartItems: [
-          ...state.cartItems.filter((item) => item.id !== action.payload.id),
-        ],
-      };
+      return removeOrderItem(state, action.payload);
 
-    case "CLEAR":
-      return {
-        cartItems: [],
-        ...sumItems([]),
-      };
+    case "CLEAR_CART":
+      return clearCart(state);
+
     default:
       return state;
   }

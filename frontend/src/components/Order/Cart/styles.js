@@ -9,5 +9,5 @@ export const CartTotal = styled.div`
   width: 100%;
   padding: 2rem 0;
   text-align: right;
-  font-size: 3rem;
+  font-size: 2.5rem;
 `;

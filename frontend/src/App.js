@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductProvider } from "./contexts/ProductContext";
+import { ProductsProvider } from "./contexts/ProductsContext";
 import { CartProvider } from "./contexts/CartContext";
 import GlobalStyle from "./Globalstyle";
 import Routes from "./routes";
@@ -8,11 +8,11 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ProductProvider>
+      <ProductsProvider>
         <CartProvider>
           <Routes />
         </CartProvider>
-      </ProductProvider>
+      </ProductsProvider>
     </>
   );
 }

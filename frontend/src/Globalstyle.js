@@ -48,18 +48,18 @@ const GlobalStyle = createGlobalStyle`
         th {
             border: 0;
             border-collapse: collapse;
-            text-align:center;
             color:#aaa;
             font-weight: 300;
         }
         td {
+            font: 300 1.2rem Poppins;
             border-bottom: 1px solid #eee;
             border-collapse: collapse;
         }
         th,
         td,
         tr {
-            padding: 8px;
+            padding: 5px;
         }
     }
 

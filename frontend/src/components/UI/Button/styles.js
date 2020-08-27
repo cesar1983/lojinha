@@ -11,6 +11,11 @@ export const Button = styled.button`
   border-radius: 0.3rem;
   transition: 0.2s ease-in;
 
+  :link,
+  :visited,
+  :active {
+    border: 2px var(--color-button-border) solid;
+  }
   :hover {
     background-color: #fff;
     color: #000;
