@@ -34,7 +34,7 @@
   },
   "proxy": {
     "/.netlify/functions": {
-      "target": "http://localhost:9000",
+      "target": "http://localhost:9090",
       "pathRewrite": {
         "^/\\.netlify/functions": ""
       }

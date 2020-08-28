@@ -8,7 +8,7 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     api
-      .get("/products")
+      .get("/products.json")
       .then((response) => {
         setProducts(response.data);
       })

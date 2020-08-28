@@ -6,3 +6,7 @@ export const OrdersWrapper = styled.div`
   height: 85vh;
   overflow-y: auto;
 `;
+
+export const TableWrapper = styled.div`
+  margin: 1rem 5rem;
+`;

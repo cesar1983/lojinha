@@ -64,6 +64,9 @@ const GlobalStyle = createGlobalStyle`
         tr {
             padding: 5px;
         }
+        tbody tr:hover{
+            background-color:#eee;
+        }
     }
 
 `;
