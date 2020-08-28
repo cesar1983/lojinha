@@ -3,8 +3,9 @@ import React, { useContext } from "react";
 import { CartContext } from "../../../contexts/CartContext";
 import { ProductsContext } from "../../../contexts/ProductsContext";
 
-import * as S from "./styles.js";
 import SlimButton from "../../UI/SlimButton";
+
+import * as S from "./styles.js";
 
 const someArray = [1, 2, 3, 4, 5, 6, 7];
 const ProductList = () => {

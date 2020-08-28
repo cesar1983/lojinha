@@ -1,9 +1,8 @@
 import React, { useContext, useMemo } from "react";
 import { AiOutlinePlusCircle, AiOutlineMinusSquare } from "react-icons/ai";
-
-import * as S from "./styles.js";
 import { CartContext } from "../../../contexts/CartContext.js";
 import Checkout from "../Checkout/index.js";
+import * as S from "./styles.js";
 
 const Cart = () => {
   const { orderItems, addItem, removeItem } = useContext(CartContext);

@@ -62,3 +62,9 @@ typings/
 
 
 .DS_Store
+
+netlify/
+.netlify/
+
+lambda/
+.lambda/

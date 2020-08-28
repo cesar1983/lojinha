@@ -1,13 +1,14 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 
 import { CartContext } from "../../../contexts/CartContext.js";
 import TextInput from "../../UI/TextInput/index.js";
 
-import * as S from "./styles.js";
 import useForm from "../../../hooks/useForm.js";
 import CheckoutButton from "../../UI/CheckoutButton";
 
-const Checkout = (props) => {
+import * as S from "./styles.js";
+
+const Checkout = () => {
   const { orderItems } = useContext(CartContext);
 
   const initialFormControlState = {
