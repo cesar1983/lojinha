@@ -26,4 +26,12 @@ module.exports = {
       filename: "./index.html",
     }),
   ],
+  devServer: {
+    proxy: {
+      "/.netlify/functions/": {
+        target: "http://0.0.0.0:9000",
+        pathRewrite: { "^/\\.netlify/functions": "" },
+      },
+    },
+  },
 };

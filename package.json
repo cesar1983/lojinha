@@ -6,7 +6,8 @@
   "author": "César",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --host 0.0.0.0 --port 9090 --open --mode development",
+    "start": "run-p dev dev:lambda",
+    "dev": "webpack-dev-server --host 0.0.0.0 --port 3000 --open --mode development",
     "build": "webpack --mode production",
     "dev:lambda": "netlify-lambda serve functions",
     "build:lambda": "netlify-lambda build functions"
@@ -18,7 +19,9 @@
     "babel-loader": "^8.1.0",
     "html-loader": "^1.2.1",
     "html-webpack-plugin": "^4.3.0",
+    "http-proxy-middleware": "^1.0.5",
     "netlify-lambda": "^2.0.1",
+    "npm-run-all": "^4.1.5",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
