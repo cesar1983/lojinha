@@ -7,6 +7,7 @@ import useForm from "../../../hooks/useForm.js";
 import CheckoutButton from "../../UI/CheckoutButton";
 
 import * as S from "./styles.js";
+import api from "../../../services/api.js";
 
 const Checkout = () => {
   const { orderItems } = useContext(CartContext);
@@ -85,13 +86,23 @@ const Checkout = () => {
 
   const processHandler = (event) => {
     event.preventDefault();
-    alert("processHandler");
 
-    const formData = { orderItems: orderItems };
+    const formData = { date: new Date().toJSON(), orderItems: orderItems };
     for (let formElementIdenfitifer in formControls) {
       formData[formElementIdenfitifer] =
         formControls[formElementIdenfitifer].value;
     }
+
+    console.log(formData);
+
+    api
+      .post("/.netlify/functions/order-create", formData)
+      .then((response) => {
+        console.log("[success]", response);
+      })
+      .catch((error) => {
+        console.log("[error]", error);
+      });
 
     // API CALL
   };

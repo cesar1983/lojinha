@@ -5,11 +5,13 @@ exports.handler = function (event, context, callback) {
 
   // const orderData = event.body;
 
-  const orderData =
-    '{"name":"Cesar","phone":"131212121","email":"cesar.fa@gmail.com","items":[{"id":"1","title":"Pilhas AAA","description":"Pilhas AAA","price":50.5},{"id":"2","title":"Pilhas A","description":"Pilhas A","price":150.5}]}';
-  const orderJson = JSON.parse(orderData);
+  // const orderData =
+  //   '{"name":"Cesar","phone":"131212121","email":"cesar.fa@gmail.com","items":[{"id":"1","title":"Pilhas AAA","description":"Pilhas AAA","price":50.5},{"id":"2","title":"Pilhas A","description":"Pilhas A","price":150.5}]}';
+  // const orderJson = JSON.parse(orderData);
 
-  console.log(orderJson);
+  const orderJson = JSON.parse(event.body);
+  // console.log(orderJson);
+
   api
     .post("/orders.json", orderJson)
     .then((response) => {

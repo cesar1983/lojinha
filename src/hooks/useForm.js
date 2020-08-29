@@ -5,8 +5,7 @@ function useForm(initialFormControlState) {
   const [isValid, setIsValid] = useState(false);
 
   function changeHandler(event, elementId) {
-    const { checked, value, type } = event.target;
-    const valueToUpdate = type === "checkbox" ? checked : value;
+    const { value } = event.target;
 
     const modifiedForm = {
       ...formControls,
@@ -14,7 +13,7 @@ function useForm(initialFormControlState) {
 
     const modifiedFormElement = { ...modifiedForm[elementId] };
 
-    modifiedFormElement.value = valueToUpdate;
+    modifiedFormElement.value = value;
     modifiedFormElement.valid = checkValidity(
       modifiedFormElement.value,
       modifiedFormElement.validation

@@ -8,16 +8,9 @@ const Orders = () => {
 
   useEffect(() => {
     api
-      .get("orders.json")
+      .get("/.netlify/functions/orders-list")
       .then((response) => {
-        const fetchedOrders = [];
-        for (let key in response.data) {
-          fetchedOrders.push({
-            ...response.data[key],
-            id: key,
-          });
-        }
-        setOrders(fetchedOrders);
+        setOrders(response.data);
       })
       .catch((error) => {
         console.log("Error while trying to fetch orders.");
