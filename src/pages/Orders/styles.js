@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const OrdersWrapper = styled.div`
-  margin: 1rem auto;
+  padding: 20px 0;
   text-align: center;
-  height: 85vh;
+  height: 90vh;
   overflow-y: auto;
 `;
 

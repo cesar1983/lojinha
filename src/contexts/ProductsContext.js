@@ -8,7 +8,7 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     api
-      .get("/products.json")
+      .get("/.netlify/functions/products")
       .then((response) => {
         setProducts(response.data);
       })

@@ -10,9 +10,9 @@ export const GridWrapper = styled.div`
 `;
 
 export const GridColumn = styled.div`
-  padding: 1rem 0;
+  padding: 20px 0;
   text-align: center;
-  height: 85vh;
+  height: 90vh;
   overflow-y: auto;
 
   ::-webkit-scrollbar-track {

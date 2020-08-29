@@ -1,7 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import * as S from "./styles.js";
 
-const CheckoutButton = ({ reset, name, label, onClickHandler, ...rest }) => {
+const CheckoutButton = ({
+  reset = false,
+  name,
+  label,
+  onClickHandler,
+  ...rest
+}) => {
   if (reset) {
     return (
       <S.ResetCheckoutButton name={name} onClick={onClickHandler} {...rest}>
@@ -15,6 +22,11 @@ const CheckoutButton = ({ reset, name, label, onClickHandler, ...rest }) => {
       </S.CheckoutButton>
     );
   }
+};
+
+CheckoutButton.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default CheckoutButton;

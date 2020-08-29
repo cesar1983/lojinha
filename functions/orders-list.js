@@ -3,7 +3,7 @@ const api = require("./services/axios-firebase");
 exports.handler = function (event, context, callback) {
   console.log("getting orders");
   api
-    .get("https://ziro-17a9f.firebaseio.com/orders.json")
+    .get("/orders.json")
     .then((response) => {
       const fetchedOrders = [];
       for (let key in response.data) {

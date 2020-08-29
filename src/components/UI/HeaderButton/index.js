@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import * as S from "./styles.js";
 
 const HeaderButton = ({ name, label, onClickHandler, ...rest }) => {
@@ -7,6 +8,10 @@ const HeaderButton = ({ name, label, onClickHandler, ...rest }) => {
       {label}
     </S.Button>
   );
+};
+HeaderButton.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default HeaderButton;

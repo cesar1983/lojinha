@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const CartWrapper = styled.div`
   width: 100%;
   padding: 2rem 5rem;
+
+  @media (max-width: 800px) {
+    padding: 2rem 2rem;
+  }
 `;
 
 export const CartTotal = styled.div`

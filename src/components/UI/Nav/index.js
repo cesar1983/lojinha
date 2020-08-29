@@ -13,10 +13,6 @@ const Nav = () => {
       <Link to="/orders">
         <HeaderButton name="order" label="Pedidos" />
       </Link>
-
-      <Link to="/lamb">
-        <HeaderButton name="lamb" label="Lamb" />
-      </Link>
     </S.Nav>
   );
 };
