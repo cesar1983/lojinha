@@ -7,6 +7,31 @@ export const OrdersWrapper = styled.div`
   overflow-y: auto;
 `;
 
-export const TableWrapper = styled.div`
+export const OrdersTableWrapper = styled.div`
   margin: 1rem 5rem;
+`;
+
+export const OrdersTable = styled.table`
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  th {
+    border: 0;
+    border-collapse: collapse;
+    color: #aaa;
+    font-weight: 400;
+  }
+  td {
+    font: 300 1.6rem Poppins;
+    border-bottom: 1px solid #eee;
+    border-collapse: collapse;
+  }
+  th,
+  td,
+  tr {
+    padding: 5px;
+  }
+  tbody tr:hover {
+    background-color: #eee;
+  }
 `;

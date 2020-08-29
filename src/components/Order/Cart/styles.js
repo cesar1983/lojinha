@@ -9,6 +9,31 @@ export const CartWrapper = styled.div`
   }
 `;
 
+export const CartTable = styled.table`
+  width: 100%;
+  border: 0;
+  border-collapse: collapse;
+  th {
+    border: 0;
+    border-collapse: collapse;
+    color: #aaa;
+    font-weight: 300;
+  }
+  td {
+    font: 300 1.2rem Poppins;
+    border-bottom: 1px solid #eee;
+    border-collapse: collapse;
+  }
+  th,
+  td,
+  tr {
+    padding: 5px;
+  }
+  tbody tr:hover {
+    background-color: #eee;
+  }
+`;
+
 export const CartTotal = styled.div`
   width: 100%;
   padding: 2rem 0;

@@ -42,5 +42,9 @@
         "^/\\.netlify/functions": ""
       }
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cesar1983/lojinha"
   }
 }

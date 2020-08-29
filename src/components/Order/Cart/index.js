@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <S.CartWrapper>
-      <table>
+      <S.CartTable>
         <thead>
           <tr>
             <th align="left">Produto</th>
@@ -57,7 +57,7 @@ const Cart = () => {
             );
           })}
         </tbody>
-      </table>
+      </S.CartTable>
       <S.CartTotal>Total: R${parseFloat(memoizedTotal).toFixed(2)}</S.CartTotal>
 
       {orderItems && orderItems.length > 0 && <Checkout />}

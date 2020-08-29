@@ -21,8 +21,8 @@ const Orders = () => {
     <Layout>
       <S.OrdersWrapper>
         <h1>Pedidos</h1>
-        <S.TableWrapper>
-          <table>
+        <S.OrdersTableWrapper>
+          <S.OrdersTable>
             <thead>
               <tr>
                 <th>Data</th>
@@ -45,8 +45,8 @@ const Orders = () => {
                 );
               })}
             </tbody>
-          </table>
-        </S.TableWrapper>
+          </S.OrdersTable>
+        </S.OrdersTableWrapper>
       </S.OrdersWrapper>
     </Layout>
   );
