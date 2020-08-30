@@ -26,15 +26,15 @@ const OrderDetail = () => {
       <>
         <dl>
           <dt>Date</dt>
-          <dd>23/23/2322</dd>
+          <dd>{order.date}</dd>
           <dt>Name</dt>
-          <dd>sdasdsadas</dd>
+          <dd>{order.name}</dd>
           <dt>E-mail</dt>
-          <dd>asdsad@asas.com</dd>
+          <dd>{order.email}</dd>
           <dt>Phone</dt>
-          <dd>4545465465</dd>
+          <dd>{order.phone}</dd>
           <dt>Total</dt>
-          <dd>4545465465</dd>
+          <dd>{order.total}</dd>
         </dl>
 
         <S.TableWrapper>
@@ -48,7 +48,7 @@ const OrderDetail = () => {
               </tr>
             </thead>
             <tbody>
-              {order?.items.map((item) => {
+              {/* {order?.items.map((item) => {
                 return (
                   <tr key={item.id}>
                     <td>{item.title}</td>
@@ -59,7 +59,7 @@ const OrderDetail = () => {
                     </td>
                   </tr>
                 );
-              })}
+              })} */}
             </tbody>
           </S.OrderItemsTable>
         </S.TableWrapper>
