@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import Layout from "../../components/UI/Layout";
 import Spinner from "../../components/UI/Spinner";
-import * as S from "./styles.js";
 import api from "../../services/api";
+import * as S from "./styles.js";
 
 const Orders = () => {
   const [orders, setOrders] = useState();
+  let history = useHistory();
 
   useEffect(() => {
     api
@@ -17,6 +19,10 @@ const Orders = () => {
         console.log("Error while trying to fetch orders.");
       });
   }, []);
+
+  const orderClickHandler = (id) => {
+    history.replace("/order/" + id);
+  };
 
   let htmlOrders = <Spinner />;
   if (orders) {
@@ -37,7 +43,11 @@ const Orders = () => {
             <tbody>
               {orders?.map((order) => {
                 return (
-                  <tr key={order.id}>
+                  <tr
+                    key={order.id}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => orderClickHandler(order.id)}
+                  >
                     <td>{order.date}</td>
                     <td>{order.name}</td>
                     <td>{order.email}</td>
