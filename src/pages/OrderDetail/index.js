@@ -12,6 +12,7 @@ const OrderDetail = () => {
     api
       .get("/.netlify/functions/order-get")
       .then((response) => {
+        console.log(response.data);
         setOrder(response.data);
       })
       .catch((error) => {
@@ -24,20 +25,30 @@ const OrderDetail = () => {
   if (order) {
     orderHtml = (
       <>
-        <dl>
-          <dt>Date</dt>
-          <dd>{order.date}</dd>
-          <dt>Name</dt>
-          <dd>{order.name}</dd>
-          <dt>E-mail</dt>
-          <dd>{order.email}</dd>
-          <dt>Phone</dt>
-          <dd>{order.phone}</dd>
-          <dt>Total</dt>
-          <dd>{order.total}</dd>
-        </dl>
-
         <S.TableWrapper>
+          <S.DefinitionList>
+            <S.DefinitionListLabel>Date</S.DefinitionListLabel>
+            <S.DefinitionListDescripton>
+              {order.date}
+            </S.DefinitionListDescripton>
+            <S.DefinitionListLabel>Name</S.DefinitionListLabel>
+            <S.DefinitionListDescripton>
+              {order.name}
+            </S.DefinitionListDescripton>
+            <S.DefinitionListLabel>E-mail</S.DefinitionListLabel>
+            <S.DefinitionListDescripton>
+              {order.email}
+            </S.DefinitionListDescripton>
+            <S.DefinitionListLabel>Phone</S.DefinitionListLabel>
+            <S.DefinitionListDescripton>
+              {order.phone}
+            </S.DefinitionListDescripton>
+            <S.DefinitionListLabel>Total</S.DefinitionListLabel>
+            <S.DefinitionListDescripton>
+              {parseFloat(order.total).toFixed(2)}
+            </S.DefinitionListDescripton>
+          </S.DefinitionList>
+
           <S.OrderItemsTable>
             <thead>
               <tr>
@@ -48,18 +59,18 @@ const OrderDetail = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {order?.items.map((item) => {
+              {order.orderItems.map((item) => {
                 return (
                   <tr key={item.id}>
                     <td>{item.title}</td>
                     <td>{item.orderQuantity}</td>
                     <td>{item.price}</td>
                     <td>
-                      {parseFloat(order.orderQuantity * order.price).toFixed(2)}
+                      {parseFloat(item.orderQuantity * item.price).toFixed(2)}
                     </td>
                   </tr>
                 );
-              })} */}
+              })}
             </tbody>
           </S.OrderItemsTable>
         </S.TableWrapper>
