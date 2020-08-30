@@ -1,7 +1,7 @@
 {
-  "name": "ziro-frontend",
+  "name": "ziro-lojinha",
   "version": "1.0.0",
-  "description": "ziro coding test - front end",
+  "description": "ziro coding test - lojinha",
   "main": "index.js",
   "author": "César",
   "license": "MIT",
@@ -10,13 +10,16 @@
     "dev": "webpack-dev-server --host 0.0.0.0 --port 3000 --open --mode development",
     "build": "webpack --mode production",
     "dev:lambda": "netlify-lambda serve functions",
-    "build:lambda": "netlify-lambda build functions"
+    "build:lambda": "netlify-lambda build functions",
+    "deploy:draft": "netlify deploy --dir=dist --functions=functions",
+    "deploy:prod": "netlify deploy --dir=dist --functions=functions --prod"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "dotenv": "^8.2.0",
     "html-loader": "^1.2.1",
     "html-webpack-plugin": "^4.3.0",
     "http-proxy-middleware": "^1.0.5",
@@ -28,6 +31,8 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "firebase": "^7.19.1",
+    "firebase-admin": "^9.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",

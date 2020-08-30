@@ -87,7 +87,16 @@ const Checkout = () => {
   const processHandler = (event) => {
     event.preventDefault();
 
-    const formData = { date: new Date().toJSON(), orderItems: orderItems };
+    const orderTotal = orderItems.reduce(
+      (subtotal, item) => subtotal + item.orderQuantity * item.price,
+      0
+    );
+
+    const formData = {
+      date: new Date().toJSON(),
+      total: orderTotal,
+      orderItems: orderItems,
+    };
     for (let formElementIdenfitifer in formControls) {
       formData[formElementIdenfitifer] =
         formControls[formElementIdenfitifer].value;

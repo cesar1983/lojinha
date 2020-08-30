@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/UI/Layout";
+import Spinner from "../../components/UI/Spinner";
 import * as S from "./styles.js";
 import api from "../../services/api";
 
 const Orders = () => {
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState();
 
   useEffect(() => {
     api
@@ -17,9 +18,10 @@ const Orders = () => {
       });
   }, []);
 
-  return (
-    <Layout>
-      <S.OrdersWrapper>
+  let htmlOrders = <Spinner />;
+  if (orders) {
+    htmlOrders = (
+      <>
         <h1>Pedidos</h1>
         <S.OrdersTableWrapper>
           <S.OrdersTable>
@@ -47,7 +49,13 @@ const Orders = () => {
             </tbody>
           </S.OrdersTable>
         </S.OrdersTableWrapper>
-      </S.OrdersWrapper>
+      </>
+    );
+  }
+
+  return (
+    <Layout>
+      <S.OrdersWrapper>{htmlOrders}</S.OrdersWrapper>
     </Layout>
   );
 };
