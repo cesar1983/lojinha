@@ -5,6 +5,9 @@ import Spinner from "../../components/UI/Spinner";
 import api from "../../services/api";
 import * as S from "./styles.js";
 
+import { parseISO, format } from "date-fns";
+import { pt } from "date-fns/locale";
+
 const Orders = () => {
   const [orders, setOrders] = useState();
   let history = useHistory();
@@ -34,8 +37,8 @@ const Orders = () => {
             <thead>
               <tr>
                 <th>Data</th>
-                <th>Nome</th>
-                <th>E-mail</th>
+                <th align="left">Nome</th>
+                <th align="left">E-mail</th>
                 <th>Phone</th>
                 <th>Total</th>
               </tr>
@@ -48,9 +51,13 @@ const Orders = () => {
                     style={{ cursor: "pointer" }}
                     onClick={() => orderClickHandler(order.id)}
                   >
-                    <td>{order.date}</td>
-                    <td>{order.name}</td>
-                    <td>{order.email}</td>
+                    <td>
+                      {format(parseISO(order.date), "dd/MM/yyyy - HH:mm:ss", {
+                        locale: pt,
+                      })}
+                    </td>
+                    <td align="left">{order.name}</td>
+                    <td align="left">{order.email}</td>
                     <td>{order.phone}</td>
                     <td>{parseFloat(order.total).toFixed(2)}</td>
                   </tr>

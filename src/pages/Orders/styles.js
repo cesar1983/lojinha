@@ -12,7 +12,7 @@ export const OrdersTableWrapper = styled.div``;
 export const OrdersTable = styled.table`
   width: 100%;
   max-width: 100rem;
-  margin: 0 auto;
+  margin: 3rem auto;
   border: 0;
   border-collapse: collapse;
   th {
@@ -29,7 +29,8 @@ export const OrdersTable = styled.table`
   th,
   td,
   tr {
-    padding: 5px;
+    padding: 0.5rem;
+    line-height: 4rem;
   }
   tbody tr:hover {
     background-color: #eee;
