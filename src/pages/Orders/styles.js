@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const OrdersWrapper = styled.div`
-  padding: 20px 0;
+  padding: 2rem;
   text-align: center;
   height: 90vh;
   overflow-y: auto;
 `;
 
-export const OrdersTableWrapper = styled.div`
-  margin: 1rem 5rem;
-`;
+export const OrdersTableWrapper = styled.div``;
 
 export const OrdersTable = styled.table`
   width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
   border: 0;
   border-collapse: collapse;
   th {

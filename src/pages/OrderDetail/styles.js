@@ -1,14 +1,21 @@
 import styled from "styled-components";
 
 export const OrderDetailWrapper = styled.div`
-  padding: 20px 0;
-  text-align: center;
-  height: 90vh;
-  overflow-y: auto;
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 `;
 
-export const TableWrapper = styled.div`
-  margin: 1rem 5rem;
+export const OrderDetailCard = styled.div`
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  text-align: left;
+  :hover {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const OrderItemsTable = styled.table`
@@ -57,7 +64,6 @@ export const ItemDescription = styled.dl`
 `;
 
 export const DefinitionList = styled.dl`
-  margin: 0 auto;
   width: 60rem;
   padding: 0.5em;
 `;

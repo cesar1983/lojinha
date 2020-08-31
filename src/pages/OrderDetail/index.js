@@ -3,7 +3,10 @@ import Layout from "../../components/UI/Layout";
 import Spinner from "../../components/UI/Spinner";
 import api from "../../services/api";
 
+import { IoIosArrowRoundBack } from "react-icons/io";
+
 import * as S from "./styles.js";
+import { Link } from "react-router-dom";
 
 const OrderDetail = () => {
   const [order, setOrder] = useState();
@@ -24,10 +27,10 @@ const OrderDetail = () => {
 
   if (order) {
     orderHtml = (
-      <>
-        <S.TableWrapper>
+      <S.OrderDetailWrapper>
+        <S.OrderDetailCard>
           <S.DefinitionList>
-            <S.DefinitionListLabel>Date</S.DefinitionListLabel>
+            <S.DefinitionListLabel>Data</S.DefinitionListLabel>
             <S.DefinitionListDescripton>
               {order.date}
             </S.DefinitionListDescripton>
@@ -39,7 +42,7 @@ const OrderDetail = () => {
             <S.DefinitionListDescripton>
               {order.email}
             </S.DefinitionListDescripton>
-            <S.DefinitionListLabel>Phone</S.DefinitionListLabel>
+            <S.DefinitionListLabel>Telefone</S.DefinitionListLabel>
             <S.DefinitionListDescripton>
               {order.phone}
             </S.DefinitionListDescripton>
@@ -73,8 +76,14 @@ const OrderDetail = () => {
               })}
             </tbody>
           </S.OrderItemsTable>
-        </S.TableWrapper>
-      </>
+        </S.OrderDetailCard>
+        <p style={{ marginTop: "2rem", textAlign: "left" }}>
+          <Link to="/orders">
+            <IoIosArrowRoundBack />
+            Voltar
+          </Link>
+        </p>
+      </S.OrderDetailWrapper>
     );
   }
 
