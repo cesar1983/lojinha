@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Layout from "../../components/UI/Layout";
 import Spinner from "../../components/UI/Spinner";
-import api from "../../services/api";
-import * as S from "./styles.js";
-
 import { parseISO, format } from "date-fns";
 import { pt } from "date-fns/locale";
+import api from "../../services/api";
+import * as S from "./styles.js";
 
 const Orders = () => {
   const [orders, setOrders] = useState();

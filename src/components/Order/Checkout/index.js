@@ -12,6 +12,7 @@ import * as S from "./styles.js";
 const Checkout = () => {
   const { orderItems, clearCart } = useContext(CartContext);
   const [savedId, setSavedId] = useState("");
+  const [processButtonLabel, setProcessButtonLabel] = useState("Processar");
 
   const initialFormControlState = {
     name: {
@@ -88,6 +89,8 @@ const Checkout = () => {
   const processHandler = (event) => {
     event.preventDefault();
 
+    setProcessButtonLabel("Aguarde...");
+
     const orderTotal = orderItems.reduce(
       (subtotal, item) => subtotal + item.orderQuantity * item.price,
       0
@@ -102,8 +105,6 @@ const Checkout = () => {
       formData[formElementIdenfitifer] =
         formControls[formElementIdenfitifer].value;
     }
-
-    console.log(formData);
 
     api
       .post("/.netlify/functions/order-create", formData)
@@ -130,7 +131,7 @@ const Checkout = () => {
         {formElements}
 
         <CheckoutButton
-          label="Processar"
+          label={processButtonLabel}
           name="process"
           type="submit"
           disabled={!isValid}

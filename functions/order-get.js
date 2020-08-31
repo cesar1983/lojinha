@@ -3,7 +3,8 @@ const api = require("./services/axios-firebase");
 exports.handler = function (event, context, callback) {
   console.log("getting order");
 
-  const key = "-MFuYc1it8Xy8bfrsz0P";
+  // const key = "-MFuYc1it8Xy8bfrsz0P";
+  const key = event.queryStringParameters.id;
 
   api
     .get('/orders.json?orderBy="$key"&equalTo="' + key + '"')

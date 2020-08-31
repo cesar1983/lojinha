@@ -6,14 +6,16 @@ import api from "../../services/api";
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 import * as S from "./styles.js";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const OrderDetail = () => {
   const [order, setOrder] = useState();
 
+  let { id } = useParams();
+
   useEffect(() => {
     api
-      .get("/.netlify/functions/order-get")
+      .get("/.netlify/functions/order-get?id=" + id)
       .then((response) => {
         setOrder(response.data);
       })
