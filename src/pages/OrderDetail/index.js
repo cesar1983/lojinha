@@ -15,7 +15,6 @@ const OrderDetail = () => {
     api
       .get("/.netlify/functions/order-get")
       .then((response) => {
-        console.log(response.data);
         setOrder(response.data);
       })
       .catch((error) => {

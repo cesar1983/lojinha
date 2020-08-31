@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { Redirect } from "react-router";
+import api from "../../../services/api.js";
 
 import { CartContext } from "../../../contexts/CartContext.js";
 import TextInput from "../../UI/TextInput/index.js";
-
 import useForm from "../../../hooks/useForm.js";
 import CheckoutButton from "../../UI/CheckoutButton";
 
 import * as S from "./styles.js";
-import api from "../../../services/api.js";
 
 const Checkout = () => {
-  const { orderItems } = useContext(CartContext);
+  const { orderItems, clearCart } = useContext(CartContext);
+  const [savedId, setSavedId] = useState("");
 
   const initialFormControlState = {
     name: {
@@ -107,7 +108,8 @@ const Checkout = () => {
     api
       .post("/.netlify/functions/order-create", formData)
       .then((response) => {
-        console.log("[success]", response);
+        setSavedId(response.data.name);
+        clearCart();
       })
       .catch((error) => {
         console.log("[error]", error);
@@ -115,6 +117,10 @@ const Checkout = () => {
 
     // API CALL
   };
+
+  if (savedId !== "") {
+    return <Redirect to={`/order/${savedId}`} />;
+  }
 
   return (
     <S.CheckoutWrapper>
