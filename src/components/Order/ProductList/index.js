@@ -7,7 +7,6 @@ import SlimButton from "../../UI/SlimButton";
 
 import * as S from "./styles.js";
 
-const someArray = [1, 2, 3, 4, 5, 6, 7];
 const ProductList = () => {
   const { addItem } = useContext(CartContext);
   const { products } = useContext(ProductsContext);

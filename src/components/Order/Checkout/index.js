@@ -115,8 +115,6 @@ const Checkout = () => {
       .catch((error) => {
         console.log("[error]", error);
       });
-
-    // API CALL
   };
 
   if (savedId !== "") {
